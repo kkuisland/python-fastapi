@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 # 라우터 전부 가져오기
-from LearnFastApi.app.routers import __all__ as routers
+from app.routers import __all__ as routers
 
 # 스웨거 api/v1 설정
 app = FastAPI(
