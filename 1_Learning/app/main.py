@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+# 파이썬 공부
+from app.learn import python as learn_python
 # 라우터 전부 가져오기
 from app.routers import __all__ as routers
 
@@ -23,31 +25,7 @@ for router in routers:
     app.include_router(router, prefix="/api/v1")
 
 # uvicorn main:app --reload 저장시 자동 리로드
-print("========== 서버 시작 ==========")
-
-
-def get_full_name(first_name: str, last_name="insoo"):
-    full_name = first_name.title() + " " + last_name.title()
-    return full_name
-
-
-def process_times(items: list[str]):
-    # print(list(enumerate(items)))  # index, value 형태 변환
-    for index, item in enumerate(items, start=1):  # enumerate(리스트 객체, 인덱스 시작 값 설정)
-        print(index, item)
-
-
-def process_item(item: int | str):  # << 3.10 , 3.6+ >> Union[int, str], from typing import Union
-    print(item)
-
-
-process_item("d")
-
-process_times(["kku", "insoo", "miso"])
-
-print(get_full_name("kku"))
-
-print("========== API 영역 ==========")
+learn_python.say_hello()
 
 #
 # class Item(BaseModel):
