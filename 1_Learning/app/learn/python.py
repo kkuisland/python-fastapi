@@ -58,18 +58,18 @@ def learn_set():
 
 def request_website():
     websites = website_tuple()
+    # r = requests.get('https://google.com', auth=('user', 'pass'))
+    # print(r.status_code)
+    # print(r.headers['content-type'])
+    # print(r.encoding)
+    # print(r.text)
+    # print(r.json())
     print("🏃🏻🏃🏻🏃🏻🏃🏻🏃🏻🏃🏻🏃🏻 웹 사이트 요청 시작 🏃🏻🏃🏻🏃🏻🏃🏻🏃🏻🏃🏻🏃🏻")
     for website in websites:
         if not website.startswith('https://'):
             website = f"https://{website}"
         response = requests.get(website)
         if response.status_code == 200:
-            # r = requests.get('https://google.com', auth=('user', 'pass'))
-            # print(r.status_code)
-            # print(response.headers['content-type'])
-            # print(response.encoding)
-            # print(r.text)
-            # print(r.json())
             print(f"{website} is up!")
         else:
             print(f"{website} is down!")
