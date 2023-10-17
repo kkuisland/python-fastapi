@@ -1,4 +1,5 @@
 from typing import Annotated
+
 from fastapi import APIRouter, Query
 
 router = APIRouter(prefix="/validations", tags=["Validations"])
